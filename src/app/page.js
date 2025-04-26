@@ -1,9 +1,7 @@
-import SwaggerUI from "swagger-ui-react"
-import "swagger-ui-react/swagger-ui.css"
+import Home from '@/components/home/Home';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div>
-    </div>
+    <Home />
   );
 }

@@ -32,7 +32,7 @@ export default function Architecture() {
                             <Card className="bg-secondary/10 p-4 my-4">
                                 <ol className="space-y-2 list-[lower-alpha] list-inside">
                                     <li>An IP Camera ingestion process must operate based on a schedule, as it is not cost-effective to continue running the processes during staffed hours.</li>
-                                    <li>The video footage needs to be persisted for a certain amount of time so that a video clip can be created asynchronously when a member enters.</li>
+                                    <li>The stream needs to be persisted for a certain amount of time so that a video clip can be created asynchronously when a member enters.</li>
                                     <li>The users must be able to change the stream retention period easily, and it should not require any actions from the system administrator.</li>
                                     <li>The users must be able to change the schedule easily, and it should not involve any actions from the system administrator.</li>
                                     <li>The processes must automatically scale in and out horizontally as new cameras enter operational hours and operational hours end for running cameras.</li>
