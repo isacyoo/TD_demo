@@ -74,7 +74,7 @@ export default function Architecture() {
 
     ]
     return (
-        <div className="space-y-4 w-1/2 mb-8">
+        <div className="space-y-4 w-full mb-8">
             <div className="flex justify-between">
                 <Button variant="secondary" size="sm" onClick={() => setCurrentIndex((currentIndex - 1 + cards.length) % cards.length)}>Previous</Button>
                 <Button variant="secondary" size="sm" onClick={() => setCurrentIndex((currentIndex + 1) % cards.length)}>Next</Button>
