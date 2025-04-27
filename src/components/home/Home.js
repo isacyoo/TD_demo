@@ -119,7 +119,7 @@ function BottomLeftPanel() {
                             </CardHeader>
                             <CardContent>
                                 <div className="flex flex-col gap-4 my-4 text-sm text-primary/80 font-light">
-                                    <Image src="/placeholder.png" alt={item.name} height={0} width={0} style={{ width: "100%", height: "auto"}} />
+                                    <Image src={item.img} alt={item.name} height={0} width={0} style={{ width: "100%", height: "auto"}} />
                                     <Card className="p-4">
                                         <p>
                                             {item.description}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ModeToggle from "@/components/common/ModeToggle";
+import PagesDropdown from "./PagesDropdown";
 
 export default function NavBar() {
     return (
@@ -10,6 +11,8 @@ export default function NavBar() {
             <div className='h-7 w-0.5 border-l-2 border-l-primary-900 ml-7'></div>
             <div className='flex items-center ml-auto mr-2'>
                 <ModeToggle />
+                <div className='h-7 w-0.5 border-l-2 border-l-primary-900 ml-7'></div>
+                <PagesDropdown />
                 <div className='h-7 w-0.5 border-l-2 border-l-primary-900 ml-7'></div>
                 <Link href='/api-reference' className='ml-7 border-'>API Reference</Link>
                 <div className='h-7 w-0.5 border-l-2 border-l-primary-900 ml-7'></div>
