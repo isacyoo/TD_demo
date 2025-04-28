@@ -7,6 +7,7 @@ import {
   } from "@/components/ui/card"
 
 import Image from "next/image"
+import ALink from "@/components/common/ALink"
 
 export default function ActionsPage() {
     return (
@@ -32,7 +33,7 @@ export default function ActionsPage() {
                         </p>
                         <Image src="/actions.png" alt="Manage actions" className="rounded-md" height={0} width={0} style={{ width: "100%", height: "auto"}} />
                         <p>
-                            Once the user has made modifications to the actions, the changes will be visible in the <a href="/pages/review-event" className="underline">Review</a> page. The dropdown list will show the available actions (including disabled if any) for the user to take. The user can select an action and click on the <strong>Confirm action</strong> button to perform the action.
+                            Once the user has made modifications to the actions, the changes will be visible in the <ALink href="/pages/review-event">Review</ALink> page. The dropdown list will show the available actions (including disabled if any) for the user to take. The user can select an action and click on the <strong>Confirm action</strong> button to perform the action.
                         </p>
                         <Image src="/take-actions.png" alt="Take actions" className="rounded-md" height={0} width={0} style={{ width: "40%", height: "auto"}} />
                     </div>

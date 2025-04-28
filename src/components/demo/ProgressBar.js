@@ -1,6 +1,5 @@
 import { Progress } from "@/components/ui/progress"
 import { useState, useEffect, useRef } from "react"
-import { API_GW_URL } from "@/lib/utils"
 
 export default function ProgressBar({ demoId }) {
     if (!demoId) {
@@ -20,7 +19,7 @@ export default function ProgressBar({ demoId }) {
         params.append("subdomain", demoId)
         params.append("currentProgress", progressRef.current)
 
-        fetch(`${API_GW_URL}/demo-environment?${params}`, {
+        fetch(`/api/demo-environment?${params}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

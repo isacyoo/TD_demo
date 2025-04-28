@@ -7,6 +7,7 @@ import {
   } from "@/components/ui/card"
 
 import Image from "next/image"
+import ALink from "@/components/common/ALink"
 
 export default function DashboardPage() {
     return (
@@ -44,7 +45,7 @@ export default function DashboardPage() {
                         </ul>
                         <Image src="/history-filter.png" alt="Manage actions" className="rounded-md" height={0} width={0} style={{ width: "40%", height: "auto"}} />
                         <p>
-                            Selecting <strong>Favourites</strong> will display a list of all events that have been saved as favourites. This allows users to keep track of all events that they have marked as important or interesting. Events can be saved as favourites by clicking on the star icon in the user panel in the review page. See <a href="/pages/review-event" className="underline">Review</a> to learn more about the user panel.
+                            Selecting <strong>Favourites</strong> will display a list of all events that have been saved as favourites. This allows users to keep track of all events that they have marked as important or interesting. Events can be saved as favourites by clicking on the star icon in the user panel in the review page. See <ALink href="/pages/review-event">Review</ALink> to learn more about the user panel.
                         </p>
 
                     </div>

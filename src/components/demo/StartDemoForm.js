@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
-import { API_GW_URL } from "@/lib/utils"
 
 export default function StartDemoForm({ setDemoId, setDemoUrl }) {
     const [ accessKey, setAccessKey ] = useState("")
@@ -23,7 +22,7 @@ export default function StartDemoForm({ setDemoId, setDemoUrl }) {
             return
         }
         setLoading(true)
-        fetch(`${API_GW_URL}/demo-environment`, {
+        fetch("/api/demo-environment", {
             method: "POST",
             headers: {
                 "Content-Type": "text/plain",

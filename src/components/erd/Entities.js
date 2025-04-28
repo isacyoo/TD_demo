@@ -11,7 +11,7 @@ export const entities = [
             { name: "api_key_expiry_date", type: "datetime", description: "Date when the API key expires" },
             { name: "video_retention_days", type: "int", description: "Account-level setting for the number of days to retain video clips." },
             { name: "stream_retention_hours", type: "int", description: "Account-level setting for the number of hours to retain live stream in KVS." },
-            { name: "review_high_risk_members", type: "bool", description: "Account-level setting for whether high risk members are always reviewed by the agents" },
+            { name: "review_high_risk_members", type: "bool", description: "Account-level setting to determine if high-risk members should always be reviewed by agents" },
         ]
     },
     {
@@ -26,7 +26,7 @@ export const entities = [
             { name: "operational_hours", type: "json", description: "Operational hours of the location." },
             { name: "video_retention_days", type: "int", description: "Number of days to retain video clips." },
             { name: "stream_retention_hours", type: "int", description: "Number of hours to retain live streams." },
-            { name: "review_high_risk_members", type: "bool", description: "Whether high-risk members are reviewed." },
+            { name: "review_high_risk_members", type: "bool", description: "Whether high-risk members should always be reviewed." },
         ]
     },
     {

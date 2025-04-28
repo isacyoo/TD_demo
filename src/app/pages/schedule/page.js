@@ -7,6 +7,7 @@ import {
   } from "@/components/ui/card"
 
 import Image from "next/image"
+import ALink from "@/components/common/ALink"
 
 export default function SchedulePage() {
     return (
@@ -25,7 +26,7 @@ export default function SchedulePage() {
                         </ul>
                         <Image src="/schedule.png" alt="Manage operational schedule" className="rounded-md" height={0} width={0} style={{ width: "100%", height: "auto"}} />
                         <p>
-                            Once the user has made modification to the schedule, the EventBridge Scheduler schedules associated with the locations will be updated, which runs a fargate container for the duration of the run. The fargate container reads from the IP camera and pushes the stream to Kinesis Video Stream, which persists the stream to be used by the Lambda function to create clips on entry. See <a href="/architecture" className="underline">Architecture</a> to learn more about the architecture of the system.
+                            Once the user has made modification to the schedule, the EventBridge Scheduler schedules associated with the locations will be updated, which runs a fargate container for the duration of the run. The fargate container reads from the IP camera and pushes the stream to Kinesis Video Stream, which persists the stream to be used by the Lambda function to create clips on entry. See <ALink href="/architecture">Architecture</ALink> to learn more about the architecture of the system.
                         </p>
                         <p>
                             Clicking on the <strong>Add run</strong> will open a modal that allows the user to add a new run. The user can select the start time and duration of the run.
@@ -43,7 +44,7 @@ export default function SchedulePage() {
                             </ul>
                             <p>In this case, the second run overlaps with the first run, as it starts at 13:00, which is within the duration of the first run (09:00 to 17:00).</p>
                             <p>
-                                Similarly, the following exmample will also be invalid:
+                                Similarly, the following example will also be invalid:
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
                                 <li>DoW = Monday, Start time = 20:00, Duration = 8 hours</li>

@@ -7,6 +7,7 @@ import {
   } from "@/components/ui/card"
 
 import Image from "next/image"
+import ALink from "@/components/common/ALink"
 
 export default function ReviewEventPage() {
     return (
@@ -27,10 +28,10 @@ export default function ReviewEventPage() {
                         </p>
                         <Image src="/video-selector.png" alt="Video selector" className="rounded-md" height={0} width={0} style={{ width: "100%", height: "auto"}} />
                         <p>
-                            On the top right side of the page, the user can see the details of the event, including the location, date and time, and information about all members associated with the event. Clicking on the star at the top will save the event as a favourite, which will be visible in the <a href="/pages/dashboard" className="underline">Favourites</a> page.
+                            On the top right side of the page, the user can see the details of the event, including the location, date and time, and information about all members associated with the event. Clicking on the star at the top will save the event as a favourite, which will be visible in the <ALink href="/pages/dashboard">Favourites</ALink> page.
                         </p>
                         <p>
-                            The user can also add high-risk members to the list of high-risk members by clicking on the <strong>+</strong> button next to the member id and remove them by clicking on the <strong>-</strong> button. This is useful when the user wants to quickly add a member to the list without having to navigate away from the review page. See <a href="/pages/members" className="underline">Members</a> for more details.
+                            The user can also add high-risk members to the list of high-risk members by clicking on the <strong>+</strong> button next to the member id and remove them by clicking on the <strong>-</strong> button. This is useful when the user wants to quickly add a member to the list without having to navigate away from the review page. See <ALink href="/pages/members">Members</ALink> for more details.
                         </p>
                         <Image src="/review-event-metadata.png" alt="Review event user panel" className="rounded-md" height={0} width={0} style={{ width: "40%", height: "auto"}} />
                         <p>

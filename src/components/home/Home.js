@@ -23,6 +23,7 @@ import {
     CarouselPrevious,
   } from "@/components/ui/carousel"
 import { pagesInfo } from "./PagesInfo"
+import ALink from "@/components/common/ALink"
   
   
 
@@ -126,7 +127,7 @@ function BottomLeftPanel() {
                                         </p>
                                         <br />
                                         <p>
-                                            See more at <a href={item.path} className="underline">{item.name}</a>
+                                            See more at <ALink href={item.path}>{item.name}</ALink>
                                         </p>
                                     </Card>
                                 </div>
