@@ -13,7 +13,7 @@ const pages = [
     { name: "Home", href: "/pages/home"},
     { name: "Dashboard", href: "/pages/dashboard"},
     { name: "Actions", href: "/pages/actions"},
-    { name: "Review event", href: "/pages/revew-event"},
+    { name: "Review event", href: "/pages/review-event"},
     { name: "Schedule", href: "/pages/schedule"},
     { name: "Members", href: "/pages/members"}
 ]
@@ -21,16 +21,16 @@ const pages = [
 export default function PagesDropdown() {
     return (
         <DropdownMenu>
-        <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
-        <DropdownMenuContent>
-            <DropdownMenuLabel>Pages</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {pages.map((page) => (
-                <DropdownMenuItem key={page.name}>
-                    <Link href={page.href}>{page.name}</Link>
-                </DropdownMenuItem>
-            ))}
-        </DropdownMenuContent>
+            <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
+            <DropdownMenuContent>
+                <DropdownMenuLabel>Pages</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {pages.map((page) => (
+                    <DropdownMenuItem key={page.name}>
+                        <Link href={page.href}>{page.name}</Link>
+                    </DropdownMenuItem>
+                ))}
+            </DropdownMenuContent>
         </DropdownMenu>
 
     )

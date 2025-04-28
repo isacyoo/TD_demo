@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
-export default function ImageMagnifier({ src, magnifierSize = 80, zoomLevel = 2.5, enabled = true, width = 70 }) {
+export default function ImageMagnifier({ src, magnifierSize = 80, zoomLevel = 2.0, enabled = true, width = 70 }) {
     const [[x, y], setXY] = useState([0, 0]);
     const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
     const [[imgX, imgY], setImgXY] = useState([0, 0]);
@@ -60,6 +60,7 @@ export default function ImageMagnifier({ src, magnifierSize = 80, zoomLevel = 2.
                 alt="Architecture"
                 width={0}
                 height={0}
+                className="rounded-lg"
                 style={{ width: `${width}%`, height: 'auto' }}
                 onMouseEnter={enabled ? handleMouseEnter : undefined}
                 onMouseMove={enabled ? handleMouseMove : undefined}

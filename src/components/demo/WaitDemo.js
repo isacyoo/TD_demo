@@ -77,7 +77,6 @@ export default function WaitDemo({ demoId, demoUrl }) {
                 <a
                     href={demoUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
                     className="text-sm font-medium text-blue-500 hover:underline"
                 >
                     Open demo
