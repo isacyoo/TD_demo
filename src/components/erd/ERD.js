@@ -42,7 +42,6 @@ function Entities({ entities }) {
 }
 
 function Entity({ name, description, columns, page }) {
-    console.log(name, page !== undefined)
     return (
         <Card>
             <CardHeader>

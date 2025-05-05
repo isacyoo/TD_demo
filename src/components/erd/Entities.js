@@ -82,18 +82,6 @@ export const entities = [
         ]
     },
     {
-        name: "high_risk_member",
-        description: <p>A member flagged as high risk.</p>,
-        page: "/pages/members",
-        columns: [
-            { name: "id", type: "int", description: "Unique identifier of the high-risk member." },
-            { name: "user_id", type: "string", description: "The user who flagged the member." },
-            { name: "member_id", type: "string", description: "User-side identifier of the high-risk member." },
-            { name: "is_deleted", type: "bool", description: "Whether the member is deleted." },
-            { name: "created_at", type: "datetime", description: "Timestamp when the member was flagged." },
-        ]
-    },
-    {
         name: "event",
         description: <>
                         <p>An event recorded in the system. Review is done on a per-event basis.</p>
@@ -140,6 +128,18 @@ export const entities = [
             { name: "entry_id", type: "string", description: "The entry associated with the video." },
             { name: "status", type: "enum", description: "Status of the video." },
             { name: "uploaded_at", type: "datetime", description: "Timestamp when the video was uploaded." },
+        ]
+    },
+    {
+        name: "high_risk_member",
+        description: <p>A member flagged as high risk.</p>,
+        page: "/pages/members",
+        columns: [
+            { name: "id", type: "int", description: "Unique identifier of the high-risk member." },
+            { name: "user_id", type: "string", description: "The user who flagged the member." },
+            { name: "member_id", type: "string", description: "User-side identifier of the high-risk member." },
+            { name: "is_deleted", type: "bool", description: "Whether the member is deleted." },
+            { name: "created_at", type: "datetime", description: "Timestamp when the member was flagged." },
         ]
     }
 ];
