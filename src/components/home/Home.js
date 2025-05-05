@@ -7,7 +7,6 @@ import {
   } from "@/components/ui/card"
 
 import Image from "next/image"
-import { Separator } from "@/components/ui/separator"
 import {
     Accordion,
     AccordionContent,
@@ -24,28 +23,39 @@ import {
   } from "@/components/ui/carousel"
 import { pagesInfo } from "./PagesInfo"
 import ALink from "@/components/common/ALink"
-  
+import LandingPageHeader from "@/components/home/LandingPageHeader"
   
 
 
 export default function Home() {
 
     return (
-        <div className="flex flex-col items-center justify-center">
-            <div className="w-4/5">
-                <TopPanel />
-                <Separator className="my-6" />
-                <BottomPanel />
+        <>
+            <LandingPageHeader />
+            <div className="flex items-start justify-center space-x-4 my-6">
+                <LeftPanel />
+                <RightPanel />
             </div>
+        </>
+    )
+}
+
+function LeftPanel() {
+    return (
+        <div className="flex flex-col w-2/5 items-center justify-center h-auto">
+            <TopLeftCard />
+            <br />
+            <BottomLeftCard />
         </div>
     )
 }
 
-function TopPanel() {
+function RightPanel() {
     return (
-        <div className="flex items-start justify-between my-6">
-            <TopLeftCard />
-            <TopRightCard />
+        <div className="flex flex-col w-3/5 items-center justify-center h-auto">
+            <TopRightPanel />
+            <br />
+            <BottomRightPanel />
         </div>
     )
 }
@@ -60,22 +70,29 @@ function TopLeftCard() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div>
-                    <Image src="/office-entry.png" alt="Office Entry" height={0} width={0} style={{ width: "100%", height: "auto"}} />
-                    <div className="flex flex-col gap-4 my-4 text-sm text-primary/80">
-                        <p><strong>Real-Time Monitoring:</strong> Our system ensures that only authorized personnel gain access to restricted areas by detecting tailgating incidents as they happen. This proactive approach minimizes security breaches effectively.</p>
-                        <p><strong>Seamless Integration:</strong> The solution works effortlessly with existing access control mechanisms, adding an extra layer of security without disrupting daily operations or requiring significant infrastructure changes.</p>
-                        <p><strong>Comprehensive Coverage:</strong> Capable of analyzing video feeds from multiple entry points simultaneously, the system provides robust security for high-priority facilities like corporate offices, government buildings, and research labs.</p>
-                        <p><strong>Cost-Effective:</strong> This system is designed to optimize resources, ensuring high performance without incurring excessive costs, making it a budget-friendly solution for organizations of all sizes.</p>
-                        <p><strong>Flexible Scheduling:</strong> The system can be configured to operate on a specific schedule, reducing energy consumption and operational costs by avoiding 24/7 runtime when not necessary.</p>
-                    </div>
+                <div className="flex flex-wrap items-start">
+                    <p className="text-sm text-primary/80">
+                        <Image src="/office-entry.png" alt="Office Entry" className="mx-4 mb-2 rounded-md" height={0} width={0} style={{ width: "40%", height: "auto", float: "right"}} />
+                        <strong>Real-Time Monitoring:</strong> Our system ensures that only authorized personnel gain access to restricted areas by detecting tailgating incidents as they happen. This proactive approach minimizes security breaches effectively.
+                        <br />
+                        <br />
+                        <strong>Seamless Integration:</strong> The solution works effortlessly with existing access control mechanisms, adding an extra layer of security without disrupting daily operations or requiring significant infrastructure changes.
+                        <br />
+                        <br />
+                        <strong>Comprehensive Coverage:</strong> Capable of analyzing video feeds from multiple entry points simultaneously, the system provides robust security for high-priority facilities like corporate offices, government buildings, and research labs.
+                        <br />
+                        <br />
+                        <strong>Cost-Effective:</strong> This system is designed to optimize resources, ensuring high performance without incurring excessive costs, making it a budget-friendly solution for organizations of all sizes.
+                        <br />
+                        <br />
+                        <strong>Flexible Scheduling:</strong> The system can be configured to operate on a specific schedule, reducing energy consumption and operational costs by avoiding 24/7 runtime when not necessary.</p>
                 </div>
             </CardContent>
         </Card>
     )
 }
 
-function TopRightCard() {
+function BottomLeftCard() {
     return (
         <Card className="mx-6">
             <CardHeader>
@@ -85,31 +102,25 @@ function TopRightCard() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div>
-                    <Image src="/gym-entry.png" alt="Gym Entry" height={0} width={0} style={{ width: "100%", height: "auto"}} />
-                    <div className="flex flex-col gap-4 my-4 text-sm text-primary/80">
-                        <p><strong>Revenue Protection:</strong> By preventing unauthorized access, gym owners can ensure that only paying members use the facilities, safeguarding their revenue streams.</p>
-                        <p><strong>Enhanced Member Experience:</strong> The system fosters a secure and exclusive environment, improving trust and satisfaction among legitimate members.</p>
-                        <p><strong>Scalability:</strong> Whether for small local gyms or large fitness chains, the solution adapts to facilities of all sizes, making it a versatile choice for diverse environments.</p>
-                    </div>
+                <div className="flex flex-wrap items-start">
+                    <p className="text-sm text-primary/80">
+                        <Image src="/gym-entry.png" alt="Gym Entry" className="mx-4 mb-2 rounded-md" height={0} width={0} style={{ width: "30%", height: "auto", float: "right"}} />
+                        <strong>Revenue Protection:</strong> By preventing unauthorized access, gym owners can ensure that only paying members use the facilities, safeguarding their revenue streams.
+                        <br />
+                        <br />
+                        <strong>Enhanced Member Experience:</strong> The system fosters a secure and exclusive environment, improving trust and satisfaction among legitimate members.
+                        <br />
+                        <br />
+                        <strong>Scalability:</strong> Whether for small local gyms or large fitness chains, the solution adapts to facilities of all sizes, making it a versatile choice for diverse environments.</p>
                 </div>
             </CardContent>
         </Card>
     )
 }
 
-function BottomPanel() {
+function TopRightPanel() {
     return (
-        <div className="flex items-start justify-center gap-16 mb-24">
-            <BottomLeftPanel />
-            <BottomRightPanel />
-        </div>
-    )
-}
-
-function BottomLeftPanel() {
-    return (
-        <Carousel className="w-1/2" opts={{ loop: true }}>
+        <Carousel className="w-4/5" opts={{ loop: true }}>
             <CarouselContent>
                 { pagesInfo.map((item, index) => (
                     <CarouselItem key={index} className="w-full">
@@ -120,7 +131,7 @@ function BottomLeftPanel() {
                             </CardHeader>
                             <CardContent>
                                 <div className="flex flex-col gap-4 my-4 text-sm text-primary/80 font-light">
-                                    <Image src={item.img} alt={item.name} height={0} width={0} style={{ width: "100%", height: "auto"}} />
+                                    <Image src={item.img} alt={item.name} className="rounded-md" height={0} width={0} style={{ width: "100%", height: "auto"}} />
                                     <Card className="p-4">
                                         <p>
                                             {item.description}
@@ -146,7 +157,7 @@ function BottomLeftPanel() {
 
 function BottomRightPanel() {
     return (
-        <Accordion type="single" collapsible className="w-1/2">
+        <Accordion type="single" collapsible className="w-4/5">
             { accordionContent.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger>{item.title}</AccordionTrigger>
