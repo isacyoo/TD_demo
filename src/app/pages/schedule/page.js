@@ -19,8 +19,9 @@ export default function SchedulePage() {
                 </CardHeader>
                 <CardContent>
                     <div className="flex flex-col gap-8">
-                        <p>This page allows user to make changes to the schedule the system operates based on, by adding, modifying and deleting "Runs". A run for a day, which will be one of the standard day of the week and public holiday, consists of the following elements:</p>
+                        <p>This page allows user to make changes to the schedule TAILDET-AI operates based on for a location, by adding, modifying and deleting "Runs". A run consists of the following elements:</p>
                         <ul className="list-disc pl-5 space-y-2">
+                            <li><strong>Day of the week:</strong> This includes standard days of week as well as public holidays. See snippet below</li>
                             <li><strong>Start time:</strong> The time the system starts operating</li>
                             <li><strong>Duration:</strong> The amount of time in hours the run lasts</li>
                         </ul>

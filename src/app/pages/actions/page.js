@@ -19,7 +19,7 @@ export default function ActionsPage() {
                 </CardHeader>
                 <CardContent>
                     <div className="flex flex-col gap-8">
-                        <p>Actions in this service allow users to manage and respond to potential tailgating incidents effectively. The actions can be added, modified, or removed by the user easily. Below are some examples of actions:</p>
+                        <p>Actions in TAILDET-AI allow users to manage and respond to potential tailgating incidents effectively. The actions can be added, modified, or removed by the user easily. Below are some examples of actions:</p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li><strong>Mark as Tailgating:</strong> Confirm the event as a tailgating incident as well as the disciplinary action performed. </li>
                             <li><strong>Dismiss:</strong> Determine the event is not tailgating and dismiss it.</li>

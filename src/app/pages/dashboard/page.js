@@ -32,11 +32,11 @@ export default function DashboardPage() {
                         </ul>
                         <Image src="/dashboard-filter.png" alt="Manage actions" className="rounded-md" height={0} width={0} style={{ width: "40%", height: "auto"}} />
                         <p>
-                            Selecting <strong>History</strong> will display a list of all events that have been reviewed, as well as the actions taken on them. This allows users to keep track of all events that have been reviewed and the actions taken on them.
+                            Selecting <strong>History</strong> will display a list of all events that have been reviewed, as well as the actions taken on them. This allows users to keep track of all events that have been reviewed and the actions taken.
                         </p>
                         <Image src="/history.png" alt="Take actions" className="rounded-md" height={0} width={0} style={{ width: "100%", height: "auto"}} />
                         <p>
-                            Within the history page, users can also filter the events based on the following criteria:
+                            Within the history page, users can filter the events based on the following criteria:
                         </p>
                         <ul className="list-disc pl-5 font-bold space-y-2">
                             <li>Member ID</li>
