@@ -4,26 +4,6 @@ info:
   version: 1.0.0
   description: API documentation for the TAILDET-AI system.
 paths:
-  /reset-api-key:
-    post:
-      summary: Reset API key
-      tags:
-        - User
-      responses:
-        '201':
-          description: API key reset
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  msg:
-                    type: string
-                  api_key:
-                    type: string
-                  expiry_date:
-                    type: string
-                    format: date-time
   /user-settings:
     get:
       summary: Get account-level settings
@@ -60,6 +40,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+  /reset-api-key:
+    post:
+      summary: Reset API key
+      tags:
+        - User
+      responses:
+        '201':
+          description: API key reset
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                  api_key:
+                    type: string
+                  expiry_date:
+                    type: string
+                    format: date-time                
   /locations:
     get:
       summary: Get all locations
@@ -773,7 +773,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                
+                $ref: '#/components/schemas/Error'
+  /event/{id}:
+    get:
+      summary: Get event by ID
+      tags:
+        - Event
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        '404':
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                             
   /adjacent-events/{id}:
     get:
       summary: Get adjacent events for navigation within the review page
@@ -807,30 +831,6 @@ paths:
                     type: string
         '404':
           description: Given event id not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /event/{id}:
-    get:
-      summary: Get event by ID
-      tags:
-        - Event
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Event info
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Event'
-        '404':
-          description: Event not found
           content:
             application/json:
               schema:
