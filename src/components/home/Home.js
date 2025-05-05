@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <>
             <LandingPageHeader />
-            <div className="flex items-start justify-center space-x-4 my-6 flex-col md:flex-row">
+            <div className="flex items-center md:items-start justify-center space-x-0 md:space-x-4 space-y-8 md:space-y-0 my-6 flex-col md:flex-row">
                 <LeftPanel />
                 <RightPanel />
             </div>
