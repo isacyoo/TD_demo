@@ -1,44 +1,9 @@
 openapi: 3.1.0
 info:
-  title: TD Flask API
+  title: TAILDET-AI API reference
   version: 1.0.0
-  description: API documentation for the TD Flask backend
-tags:
-  - name: User
-    description: User related operations
-  - name: Location
-    description: Location related operations
-  - name: Action
-    description: Action related operations
-  - name: Event
-    description: Event related operations
-  - name: Entry
-    description: Entry related operations
-  - name: Schedule
-    description: Schedule related operations
-  - name: Stats
-    description: Statistics related operations
+  description: API documentation for the TAILDET-AI system.
 paths:
-  /user-info:
-    get:
-      summary: Get user info
-      tags:
-        - User
-      responses:
-        '200':
-          description: User info
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  name:
-                    type: string
-                  role:
-                    type: string
-                    enum: [ADMIN, USER]
   /reset-api-key:
     post:
       summary: Reset API key
@@ -61,18 +26,18 @@ paths:
                     format: date-time
   /user-settings:
     get:
-      summary: Get user settings
+      summary: Get account-level settings
       tags:
         - User
       responses:
         '200':
-          description: User settings
+          description: User settings retrieved
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
     put:
-      summary: Update user settings
+      summary: Update account-level settings
       tags:
         - User
       requestBody:
@@ -102,7 +67,7 @@ paths:
         - Location
       responses:
         '200':
-          description: List of locations
+          description: All locations retrieved
           content:
             application/json:
               schema:
@@ -125,13 +90,13 @@ paths:
             type: string
       responses:
         '200':
-          description: Location info
+          description: Information about the location
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
         '404':
-          description: Not found
+          description: Location not found
           content:
             application/json:
               schema:
@@ -149,7 +114,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Location ID
+          description: Location ID for the given name
           content:
             application/json:
               schema:
@@ -158,14 +123,14 @@ paths:
                   location_id:
                     type: integer
         '404':
-          description: Not found
+          description: Location not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /current-stats:
     get:
-      summary: Get current stats
+      summary: Get real-time analytics of all locations
       tags:
         - Stats
       parameters:
@@ -175,14 +140,14 @@ paths:
             type: integer
       responses:
         '200':
-          description: Stats
+          description: Stats retrieved
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/StatsResponse'
   /location-settings/{location_id}:
     put:
-      summary: Update location settings
+      summary: Update location-level settings
       tags:
         - Location
       parameters:
@@ -199,13 +164,13 @@ paths:
               $ref: '#/components/schemas/Location'
       responses:
         '200':
-          description: Location updated
+          description: Location-level setting updated
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
         '404':
-          description: Not found
+          description: Location not found
           content:
             application/json:
               schema:
@@ -333,20 +298,20 @@ paths:
                   type: string
       responses:
         '201':
-          description: Action applied
+          description: Action applied to the event
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Event'
         '404':
-          description: Not found
+          description: Either action or event not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /entry:
     post:
-      summary: Entry webhook
+      summary: Webhook called upon member entry
       tags:
         - Entry
       requestBody:
@@ -381,7 +346,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Video URL
+          description: Video presigned URL
           content:
             application/json:
               schema:
@@ -390,7 +355,7 @@ paths:
                   url:
                     type: string
         '404':
-          description: Not found
+          description: Video not found
           content:
             application/json:
               schema:
@@ -400,6 +365,7 @@ paths:
       summary: Get location schedule
       tags:
         - Schedule
+        - Location
       parameters:
         - in: path
           name: location_id
@@ -408,22 +374,23 @@ paths:
             type: string
       responses:
         '200':
-          description: Schedule
+          description: Schedule of the location retrieved
           content:
             application/json:
               schema:
                 type: object
                 $ref: '#/components/schemas/Schedule'
         '404':
-          description: Not found
+          description: Location not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Modify location schedule
+      summary: Modify schedule for a location
       tags:
         - Schedule
+        - Location
       parameters:
         - in: path
           name: location_id
@@ -446,7 +413,7 @@ paths:
                 type: object
                 $ref: '#/components/schemas/Location'
         '404':
-          description: Not found
+          description: Location not found
           content:
             application/json:
               schema:
@@ -538,7 +505,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HighRiskMember'
         '404':
-          description: Not found
+          description: High risk member not found
           content:
             application/json:
               schema:
@@ -561,7 +528,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HighRiskMember'
         '400':
-          description: Already exists
+          description: High risk member already exists
           content:
             application/json:
               schema:
@@ -587,14 +554,14 @@ paths:
                   msg:
                     type: string
         '404':
-          description: Not found
+          description: High risk member not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /unreviewed-events/{location_id}:
     get:
-      summary: Get all unreviewed events
+      summary: Get all unreviewed events for a location
       tags:
         - Event
       parameters:
@@ -614,7 +581,7 @@ paths:
             enum: [12h, 1d, 2d, 5d, 1w, 2w, 4w]
       responses:
         '200':
-          description: List of events
+          description: List of unreviewed events for the location
           content:
             application/json:
               schema:
@@ -626,7 +593,7 @@ paths:
                       $ref: '#/components/schemas/Event'
   /unreviewed-events/{location_id}/{page}:
     get:
-      summary: Get paginated unreviewed events
+      summary: Get paginated unreviewed events for a location
       tags:
         - Event
       parameters:
@@ -651,20 +618,20 @@ paths:
             enum: [12h, 1d, 2d, 5d, 1w, 2w, 4w]
       responses:
         '200':
-          description: Paginated events
+          description: Paginated unreviewed events for the location
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventWithPageInfo'
         '404':
-          description: Not found
+          description: Page not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /history-events/{location_id}:
     get:
-      summary: Get all history events
+      summary: Get all history events for a location
       tags:
         - Event
       parameters:
@@ -688,7 +655,7 @@ paths:
             enum: [12h, 1d, 2d, 5d, 1w, 2w, 4w]
       responses:
         '200':
-          description: List of events
+          description: List of history events for the location
           content:
             application/json:
               schema:
@@ -700,7 +667,7 @@ paths:
                       $ref: '#/components/schemas/Event'
   /history-events/{location_id}/{page}:
     get:
-      summary: Get paginated history events
+      summary: Get paginated history events for a location
       tags:
         - Event
       parameters:
@@ -728,20 +695,88 @@ paths:
             type: string
       responses:
         '200':
-          description: Paginated events
+          description: Paginated history events for the location
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventWithPageInfo'
         '404':
-          description: Not found
+          description: Page not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /saved-events/{location_id}:
+    get:
+      summary: Get all saved events for a location
+      tags:
+        - Event
+      parameters:
+        - in: path
+          name: location_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: memberId
+          schema:
+            type: string
+        - in: query
+          name: time
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of saved events for the location
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Event'
+  /saved-events/{location_id}/{page}:
+    get:
+      summary: Get paginated saved events for a location
+      tags:
+        - Event
+      parameters:
+        - in: path
+          name: location_id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: page
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: memberId
+          schema:
+            type: string
+        - in: query
+          name: time
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated saved events for the location
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventWithPageInfo'
+        '404':
+          description: Page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                
   /adjacent-events/{id}:
     get:
-      summary: Get adjacent events
+      summary: Get adjacent events for navigation within the review page
       tags:
         - Event
       parameters:
@@ -760,7 +795,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Adjacent events
+          description: Adjacent events for the given event
           content:
             application/json:
               schema:
@@ -771,7 +806,7 @@ paths:
                   previous_event:
                     type: string
         '404':
-          description: Not found
+          description: Given event id not found
           content:
             application/json:
               schema:
@@ -795,75 +830,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Event'
         '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /saved-events/{location_id}:
-    get:
-      summary: Get all saved events
-      tags:
-        - Event
-      parameters:
-        - in: path
-          name: location_id
-          required: true
-          schema:
-            type: string
-        - in: query
-          name: memberId
-          schema:
-            type: string
-        - in: query
-          name: time
-          schema:
-            type: string
-      responses:
-        '200':
-          description: List of events
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  events:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Event'
-  /saved-events/{location_id}/{page}:
-    get:
-      summary: Get paginated saved events
-      tags:
-        - Event
-      parameters:
-        - in: path
-          name: location_id
-          required: true
-          schema:
-            type: string
-        - in: path
-          name: page
-          required: true
-          schema:
-            type: integer
-        - in: query
-          name: memberId
-          schema:
-            type: string
-        - in: query
-          name: time
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Paginated events
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EventWithPageInfo'
-        '404':
-          description: Not found
+          description: Event not found
           content:
             application/json:
               schema:
@@ -896,7 +863,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Event'
         '404':
-          description: Not found
+          description: Event not found
           content:
             application/json:
               schema:
