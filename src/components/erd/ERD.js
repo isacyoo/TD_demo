@@ -2,7 +2,6 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
@@ -49,11 +48,13 @@ function Entity({ name, description, columns }) {
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
             <CardContent>
-                {columns.map((column) => (
-                    <div key={column.name}>
-                        <strong>{column.name}</strong> ({column.type}) - {column.description}
-                    </div>
-                ))}
+                <div className="grid grid-cols-1 gap-4">
+                    {columns.map((column) => (
+                        <div key={column.name}>
+                            <strong>{column.name}</strong> ({column.type}) - {column.description}
+                        </div>
+                    ))}
+                </div>
             </CardContent>
         </Card>
     )
