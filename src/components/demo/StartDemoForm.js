@@ -30,17 +30,19 @@ export default function StartDemoForm({ setDemoId, setDemoUrl }) {
             },
         })
             .then((res) => {
-                setLoading(false)
                 if (res.ok) {
                     toast.success("Demo started successfully")
-
+                    return res.json()
                 } else if (res.status === 403) {
                     toast.error("Invalid access key")
                 } else if (res.status === 502) {
                     toast.error("Internal server error")
+                } else if (res.status === 429) {
+                    toast.error("Five demos are currently running. Please try again in an hour")
                 } else {
                     toast.error("Unable to start demo")
                 }
+                setLoading(false)
                 return res.json()
             })
             .then((data) => {
@@ -51,9 +53,6 @@ export default function StartDemoForm({ setDemoId, setDemoUrl }) {
                 }
             })
             .catch((err) => {
-                console.log("Asdf")
-                console.error(err)
-                console.log("adsff")
                 setLoading(false)
                 toast.error("Invalid access key")
             })

@@ -45,7 +45,7 @@ export default function WaitDemo({ demoId, demoUrl }) {
             <ProgressBar demoId={demoId} />
             <CardContent>
                 <Alert className="mb-4">
-                    <AlertTitle>Important</AlertTitle>
+                    <AlertTitle>Demo link</AlertTitle>
                     <AlertDescription>
                         This information will not be available once you navigate away from the page. Please use the link below to access your demo.
                     </AlertDescription>
@@ -62,11 +62,29 @@ export default function WaitDemo({ demoId, demoUrl }) {
                             </HoverCardContent>
                         </HoverCard>
                     </AlertDescription>
+                    <AlertDescription>
+                        Use the following credentials to login
+                        <Card>
+                            <CardContent className="pt-6 mt-6">
+                                <p className="text-sm">Username: demo</p>
+                                <p className="text-sm">Password: demo</p>
+                            </CardContent>
+                        </Card>
+                    </AlertDescription>
                 </Alert>
                 <Alert variant="destructive" className="mb-4">
                     <AlertTitle>Important</AlertTitle>
                     <AlertDescription>
-                        Please note that the demo will be available for 6 hours. After that, it will be automatically deleted.
+                        Please note that the demo will be available for 1 hour. After that, it will be automatically deleted.
+                    </AlertDescription>
+                </Alert>
+                <Alert className="mb-4">
+                    <AlertTitle>Creating multiple demo environments</AlertTitle>
+                    <AlertDescription>
+                        Feel free to create multiple demo environments. You will notice they are all independent to each other.
+                        <br />
+                        <br />
+                        Please note that there is a limit of five demo environments running concurrently at the moment, including the ones other people created. You will not be able to create a new demo if there are already five running. If this happens, please wait for one of the existing demos to be deleted before creating a new one.
                     </AlertDescription>
                 </Alert>
             </CardContent>
