@@ -18,10 +18,10 @@ const pages = [
     { name: "Members", href: "/pages/members"}
 ]
 
-export default function PagesDropdown() {
+export default function PagesDropdown({ underline }) {
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
+            <DropdownMenuTrigger className={underline ? "border-b-2 border-primary my-2" : ""}>Pages</DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuLabel>Pages</DropdownMenuLabel>
                 <DropdownMenuSeparator />

@@ -8,7 +8,7 @@ export default function PagesLayout({ children }) {
             <SidebarProvider>
                 <PagesSidebar />
                 <SidebarTrigger />
-                <div className='m-8 w-1/2'>
+                <div className='m-8 w-full md:w-1/2'>
                     {children}
                 </div>
             </SidebarProvider>

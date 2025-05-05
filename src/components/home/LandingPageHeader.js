@@ -10,8 +10,8 @@ export default function LandingPageHeader() {
         <div className="mx-12 my-16 w-5/6">
             <h1 className="text-4xl font-bold text-primary">AI-Powered Tailgating Detection by Hwan Yoo</h1>
             <Separator className="my-4" />
-            <div className="flex items-center justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
-                <p className="text-lg text-primary/80">
+            <div className="flex items-center justify-between flex-col md:flex-row space-y-4 md:space-y-0">
+                <p className="text-lg text-primary/80 mx-4">
                     Enhance security with our AI-powered solution, TAILDET-AI
                 </p>
                 <QuickLinks />
