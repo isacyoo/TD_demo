@@ -5,7 +5,7 @@ import PagesDropdown from "./PagesDropdown";
 export default function NavBar() {
     return (
         <div className='flex items-center w-auto h-12 p-4 shadow-md'>
-            <Link href ='/' className='ml-7 text-sm transition-all'>
+            <Link href ='/' className='ml-7'>
                 Home
             </Link>
             <div className='h-7 w-0.5 border-l-2 border-l-primary/20 mx-7'></div>

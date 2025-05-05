@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeWrapper } from "@/components/common/ThemeWrapper"
 import NavBar from "@/components/common/NavBar"
+import Footer from "@/components/common/Footer"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <Toaster position="top-center" closeButton={true} duration={3000}/>
           <NavBar />
           {children}
+          <Footer />
         </ThemeWrapper>
       </body>
     </html>
