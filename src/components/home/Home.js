@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <>
             <LandingPageHeader />
-            <div className="flex items-start justify-center space-x-4 my-6">
+            <div className="flex items-start justify-center space-x-4 my-6 flex-col lg:flex-row">
                 <LeftPanel />
                 <RightPanel />
             </div>
@@ -42,7 +42,7 @@ export default function Home() {
 
 function LeftPanel() {
     return (
-        <div className="flex flex-col w-2/5 items-center justify-center h-auto">
+        <div className="flex flex-col w-full lg:w-2/5 items-center justify-center h-auto">
             <TopLeftCard />
             <br />
             <BottomLeftCard />
@@ -52,7 +52,7 @@ function LeftPanel() {
 
 function RightPanel() {
     return (
-        <div className="flex flex-col w-3/5 items-center justify-center h-auto">
+        <div className="flex flex-col w-full lg:w-3/5 items-center justify-center h-auto">
             <TopRightPanel />
             <br />
             <BottomRightPanel />
