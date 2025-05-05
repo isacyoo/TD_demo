@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
-export default function ImageMagnifier({ src, magnifierSize = 80, zoomLevel = 2.0, enabled = true, width = 70 }) {
+export default function ImageMagnifier({ src, magnifierSize = 400, zoomLevel = 1.5, enabled = true, width = 70 }) {
     const [[x, y], setXY] = useState([0, 0]);
     const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
     const [[imgX, imgY], setImgXY] = useState([0, 0]);
