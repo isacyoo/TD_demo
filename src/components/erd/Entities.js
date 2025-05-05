@@ -2,7 +2,6 @@ export const entities = [
     {
         name: "user",
         description: <p>A user of the system, who manages the facilities equipped with IP cameras. A user must belong to an organization.</p>,
-        page: null,
         columns: [
             { name: "id", type: "string", description: "Unique identifier of the user." },
             { name: "name", type: "string", description: "Name of the user." },
@@ -72,9 +71,10 @@ export const entities = [
     {
         name: "action",
         description: <p>An action performed by a user on an event.</p>,
+        page: "/pages/actions",
         columns: [
-            { name: "id", type: "int", primaryKey: true, description: "Unique identifier of the action." },
-            { name: "user_id", type: "string", foreignKey: "user.id", description: "The user who performed the action." },
+            { name: "id", type: "int", description: "Unique identifier of the action." },
+            { name: "user_id", type: "string", description: "The user who performed the action." },
             { name: "name", type: "string", description: "Name of the action." },
             { name: "is_tailgating", type: "bool", description: "Indicates if the action is done on a tailgating event." },
             { name: "is_enabled", type: "bool", description: "Whether the action is enabled." },
@@ -84,6 +84,7 @@ export const entities = [
     {
         name: "high_risk_member",
         description: <p>A member flagged as high risk.</p>,
+        page: "/pages/members",
         columns: [
             { name: "id", type: "int", description: "Unique identifier of the high-risk member." },
             { name: "user_id", type: "string", description: "The user who flagged the member." },
@@ -101,6 +102,7 @@ export const entities = [
                         <br />
                         <p> An event will be marked as tailgating if the number of people detected exceeds the number of people scanned in an event.</p>
                     </>,
+        page: "/pages/review-event",
         columns: [
             { name: "id", type: "string", description: "Unique identifier of the event." },
             { name: "location_id", type: "int", description: "The location where the event occurred." },

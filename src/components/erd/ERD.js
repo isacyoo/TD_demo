@@ -15,6 +15,7 @@ import {
   } from "@/components/ui/carousel"
 
 import { entities } from "./Entities"
+import ALink from "@/components/common/ALink"
 
 export default function ERD() {
     return (
@@ -40,12 +41,14 @@ function Entities({ entities }) {
     )
 }
 
-function Entity({ name, description, columns }) {
+function Entity({ name, description, columns, page }) {
+    console.log(name, page !== undefined)
     return (
         <Card>
             <CardHeader>
                 <CardTitle>{name}</CardTitle>
                 <CardDescription>{description}</CardDescription>
+                { page !== undefined ? <CardDescription><ALink href={page} blank>Learn more</ALink></CardDescription>: <></> }
             </CardHeader>
             <CardContent>
                 <div className="grid grid-cols-1 gap-4">
