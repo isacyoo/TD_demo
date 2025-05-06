@@ -47,7 +47,7 @@ export default function ProgressBar({ demoId }) {
         <div className="flex flex-col items-center px-4">
             { currentState ? (
                 <span>
-                    { `Current state: ${currentState} - ${message}` }
+                    { currentState != "RUNNING" ? `Current state: ${currentState} - ${message}` : "Your demo is up and running! Use the link below to access it." }
                 </span>
             ): <></>}
             <Progress value={progress} className="my-6" />
