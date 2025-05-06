@@ -64,8 +64,8 @@ export default function WaitDemo({ demoId, demoUrl }) {
                     </AlertDescription>
                     <AlertDescription>
                         Use the following credentials to login
-                        <Card>
-                            <CardContent className="pt-6 mt-6">
+                        <Card className="mt-4">
+                            <CardContent className="pt-6">
                                 <p className="text-sm">Username: demo</p>
                                 <p className="text-sm">Password: demo</p>
                             </CardContent>

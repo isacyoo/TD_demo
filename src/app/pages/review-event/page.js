@@ -38,6 +38,9 @@ export default function ReviewEventPage() {
                             On the bottom right side of the page, the user can see the list of actions available for the event. The user can select an action and click on the <strong>Confirm action</strong> button to perform the action. The user can also add comments to the event by using the textarea below. This is useful when the user wants to add a comment to the event for future reference or analysis.
                         </p>
                         <Image src="/take-actions.png" alt="Take actions" className="rounded-md" height={0} width={0} style={{ width: "40%", height: "auto"}} />
+                        <p>
+                            The user can navigate between events using the <strong>Previous</strong> and <strong>Next</strong> buttons at the bottom of the page. The previous and next events of the current event is determined by list of events in the <ALink href="/pages/dashboard">Dashboard</ALink> page, which is primarily sorted by date and time. If there was a filter applied to the events in the dashboard and the user started the review from the dashboard, the same filter will be applied when determining the previous and next events.
+                        </p>
                     </div>
                 </CardContent>
             </Card>
