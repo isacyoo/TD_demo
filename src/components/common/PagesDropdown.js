@@ -21,7 +21,7 @@ const pages = [
 export default function PagesDropdown({ underline }) {
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger className={underline ? "border-b-2 border-primary my-2" : ""}>Pages</DropdownMenuTrigger>
+            <DropdownMenuTrigger className={underline ? "border-b-2 border-primary my-4" : ""}>Pages</DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuLabel>Pages</DropdownMenuLabel>
                 <DropdownMenuSeparator />

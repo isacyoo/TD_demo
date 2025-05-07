@@ -37,6 +37,8 @@ function NavBarWide() {
                 <div className='h-7 w-0.5 border-l-2 border-l-primary/20 mx-7'></div>
                 <Link href='/erd'>ERD</Link>
                 <div className='h-7 w-0.5 border-l-2 border-l-primary/20 mx-7'></div>
+                <Link href='/repos'>Repos</Link>
+                <div className='h-7 w-0.5 border-l-2 border-l-primary/20 mx-7'></div>
                 <Link href='/demo'>Start Demo</Link>                           
             </div>
         </div>
@@ -64,6 +66,7 @@ function NavBarNarrow() {
                     <Link href='/api-reference' className='my-4 border-b-2 border-b-primary'>API Reference</Link>
                     <Link href='/architecture' className='my-4 border-b-2 border-b-primary'>Architecture</Link>
                     <Link href='/erd' className='my-4 border-b-2 border-b-primary'>ERD</Link>
+                    <Link href='/repos' className='my-4 border-b-2 border-b-primary'>Repos</Link>
                     <Link href='/demo' className='my-4 border-b-2 border-b-primary'>Start Demo</Link>                           
 
                 </div>

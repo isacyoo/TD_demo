@@ -1,0 +1,7 @@
+export const repos = [
+    { name: "TD_next", url: "https://github.com/isacyoo/TD_next", description: "Next.js app for TAILDET-AI frontend", framework: "Next.js 15 - app router", content: <p>Next.js app for rendering user data and user interface to interact with the system.</p> },
+    { name: "TD_flask", url: "https://github.com/isacyoo/TD_flask", description: "Flask app for TAILDET_AI backend", framework: "Flask", content: <p>Flask app for backend API as well as control plane to interact with different AWS services.</p> },
+    { name: "TD_Lambda", url: "https://github.com/isacyoo/TD_Lambda", description: "All Lambda functions source code", framework: "Python", content: <p>Lambda functions for the TAILDET-AI service itself as well as managing demo environments</p> },
+    { name: "TD_demo", url: "https://github.com/isacyoo/TD_demo", description: "Next.js app for TAILDET-AI documentation website", framework: "Next.js 14 - app router", content: <p>The website you are looking at right now!</p> },
+    { name: "TD_RTSP", url: "https://github.com/isacyoo/TD_RTSP", description: "Custom docker image for reading from cameras and pushing to KVS", framework: null, content: <p>Builds custom image that is used by ECS Fargate to read from IP Cameras and push to KVS.</p> }
+]
