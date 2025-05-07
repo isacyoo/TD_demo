@@ -18,6 +18,8 @@ import {
     HoverCardTrigger,
   } from "@/components/ui/hover-card"
 
+import { Clipboard } from 'lucide-react';
+
 export default function WaitDemo({ demoId, demoUrl }) {
     if (!demoId) {
         return <></>
@@ -54,7 +56,7 @@ export default function WaitDemo({ demoId, demoUrl }) {
                         <HoverCard openDelay={0} closeDelay={0}>
                             <HoverCardTrigger className="cursor-pointer" onClick={handleCopy}>
                                 <Button variant="link" size="icon">
-                                    x
+                                    <Clipboard />
                                 </Button>
                             </HoverCardTrigger>
                             <HoverCardContent>

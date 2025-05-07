@@ -96,16 +96,16 @@ function BottomLeftCard() {
     return (
         <Card className="mx-6">
             <CardHeader>
-                <CardTitle>Gym Access Control</CardTitle>
+                <CardTitle>Access Control in membership-based facilities</CardTitle>
                 <CardDescription>
-                    Secure gyms and fitness centers with ease.
+                    Secure membership-based facilities such as gyms and fitness centers with ease.
                 </CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex flex-wrap items-start">
                     <p className="text-sm text-primary/80">
                         <Image src="/gym-entry.png" alt="Gym Entry" className="mx-4 mb-2 rounded-md" height={0} width={0} style={{ width: "30%", height: "auto", float: "right"}} />
-                        <strong>Revenue Protection:</strong> By preventing unauthorized access, gym owners can ensure that only paying members use the facilities, safeguarding their revenue streams.
+                        <strong>Revenue Protection:</strong> By preventing unauthorized access, owners can ensure that only paying members use the facilities, safeguarding their revenue streams.
                         <br />
                         <br />
                         <strong>Enhanced Member Experience:</strong> The system fosters a secure and exclusive environment, improving trust and satisfaction among legitimate members.
